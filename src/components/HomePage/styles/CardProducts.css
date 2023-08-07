@@ -1,0 +1,111 @@
+.card {
+    border: 0.1em solid #ccc;
+    border-radius: 0.4em;
+    width: 100%;
+    max-width: 20em;
+    cursor: pointer;
+    transition: transform 150ms ease;
+    background-color: white ;
+    
+}
+.card:hover{
+    transform: scale(1.03);
+}
+
+.card-header {
+    padding: 1.2em;
+    aspect-ratio: 1.5;
+    border-bottom: 0.1em solid #ccc;
+    position: relative;
+}
+
+.card-img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity 300ms ease;
+}
+.card-header:hover .card-img1{
+opacity: 0;
+}
+
+.card-header:hover .card-img2{
+opacity: 1;
+}
+.card-img1{
+    opacity: 1;
+}
+
+.card-img2{
+    opacity: 0;
+}
+    
+.card-body {
+    padding: 1.5em 1.2em 2em;
+
+}
+
+.card-body {
+    grid-column: span 2;
+    padding: 1.5em 1.2em 2em;
+    display: grid;
+    gap: 1.5em 0;
+    grid-template-columns: repeat(2, 1fr);
+
+
+}
+
+.card-body-header {
+
+    grid-column: span 2;
+}
+
+.card-brand {
+    font-size: 0.9em;
+    margin-left: 1em;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 0.2em;
+}
+
+.card-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.card-price-label {
+    color: #888;
+    font-weight: 300;
+    font-size: 0.9em;
+    margin-bottom: 0.2em;
+}
+
+.card-price-value {
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.card-price-value::before {
+    content: '$';
+    margin-right: 0.5em;
+}
+
+.card-button { 
+    font-size: 1.5em;
+    width: 2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #f85555;
+    color: white;
+    justify-self: center;
+    position: relative;
+    left: 1em;
+    filter: grayscale(0.2);
+}
+.card-button:hover{
+    filter: grayscale(0);
+}

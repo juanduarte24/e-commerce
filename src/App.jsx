@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import  {Header}  from './components/shared/Header'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
+import ProductIdPages from './pages/ProductIdPages'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<HomePages />} />
         <Route path='/register' element={ <RegisterPage/>} />
         <Route path='/login' element={<LoginPage/> } />
+        <Route path='/product/:id' element={<ProductIdPages/>}/>
       </Routes>
 
 
