@@ -1,7 +1,7 @@
 const getConfigToken = () => {
     return{
         headers : {
-            Authorization : `Bearer ${localStorage.getItem("Token")}}` 
+            Authorization : `Bearer ${localStorage.getItem("Token")}` 
         }
     }
 }

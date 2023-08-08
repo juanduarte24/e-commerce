@@ -1,9 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './styles/CardProducts.css'
+import useCardApi from '../../hooks/useCardApi'
 
 export const CarProduct = ({ product }) => {
     const navigate = useNavigate()
+
+    const {addToCart} = useCardApi()
     const handleNavigate = () => {
         navigate(`/product/${product.id}`)
 
@@ -11,6 +14,11 @@ export const CarProduct = ({ product }) => {
 
     const handleAddCart = e => {
         e.stopPropagation()
+        const data = {
+            quantity : 1 ,
+            productId: product.id
+        }
+        addToCart(data)
     }
     return (
         <article className='card' onClick={handleNavigate}>
@@ -28,7 +36,7 @@ export const CarProduct = ({ product }) => {
                     <h3 className='card-price-label'>Price</h3>
                     <span className='card-price-value'>{product.price}</span>
                 </article>
-                <button className='card-button' onClick={handleAddCart}><i className='bx bxs-cart card-icon'></i></button>
+                <button  className='card-button' onClick={handleAddCart}><i className='bx bxs-cart card-icon'></i></button>
             </section>
         </article>
     )

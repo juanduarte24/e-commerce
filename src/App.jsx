@@ -8,6 +8,7 @@ import  {Header}  from './components/shared/Header'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import ProductIdPages from './pages/ProductIdPages'
+import CartPage from './pages/CartPage'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/register' element={ <RegisterPage/>} />
         <Route path='/login' element={<LoginPage/> } />
         <Route path='/product/:id' element={<ProductIdPages/>}/>
+        <Route path='/cart' element={<CartPage/>} />
       </Routes>
 
 
