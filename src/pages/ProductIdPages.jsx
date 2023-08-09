@@ -8,21 +8,21 @@ const ProductIdPages = () => {
 
     const { id } = useParams()
 
-    const [ product , getSingleProduct] = useFetch()
+    const [product, getSingleProduct] = useFetch()
 
-    useEffect(()=>{
+    useEffect(() => {
         getSingleProduct(`/products/${id}`)
-    },[id])
+    }, [id])
 
-   
+
     return (
         <div>
-            <ProductInfo 
-            product={product}
+            <ProductInfo
+                product={product}
             />
             <SimiliarProducts
-            product={product}
-            />
+                product={product}
+            />s
         </div>
     )
 }

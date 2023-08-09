@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
+import useCardApi from '../../hooks/useCardApi'
+import { useDispatch } from "react-redux"
+
 
 export const ProductInfo = ({ product }) => {
-
     const [counter, setCounter] = useState(1)
 
-const handlePlus = ()=>{
-    setCounter(counter+1)
+    const dispatch = useDispatch()
+    const { addToCart } = useCardApi()
 
-}
+    const handlePlus = () => setCounter(counter + 1)
 
-const handleMinus = ()=>{
-    if (counter -1 > 1 ){
-        setCounter(counter-1)
-    
-}
-}
+    const handleMinus = () => {
+        if (counter - 1 >= 0) {
+            setCounter(counter - 1)
+
+        }
+    }
+
+    const handleAddToCart = () => {
+        const data = {
+            quantity : counter,
+            productId : product.id
+        }
+       addToCart(data)
+    }
 
 
     return (
@@ -35,7 +45,7 @@ const handleMinus = ()=>{
                 </div>
             </section>
             <footer>
-                <button>Add to Cart <i className='bx bxs-cart'></i></button>
+                <button onClick={handleAddToCart}>Add to Cart <i className='bx bxs-cart'></i></button>
             </footer>
 
         </article>
