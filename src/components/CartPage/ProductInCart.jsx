@@ -8,6 +8,8 @@ const ProductInCart = ({ prodCart }) => {
         deleteProductInCart(prodCart.id)
     }
 
+  
+
     return (
         <article>
             <header>
